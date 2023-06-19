@@ -1,0 +1,1 @@
+var t=Object.defineProperty;var g=o=>t(o,"__esModule",{value:!0});var s=(o,l)=>{g(o);for(var r in l)t(o,r,{get:l[r],enumerable:!0})};s(exports,{default:()=>e});var e=class{constructor({logger:l}){this.logger=l||console}async deploy(l){return this.logger.log(`deploy: ${JSON.stringify(l,null,2)}`),{hello:"world"}}};0&&(module.exports={});
