@@ -1,19 +1,22 @@
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const description = `You can get accounts.
+ 
+  Example:
+    $ s config get
+    $ s config get -a demo
+    $ only test
+ `;
 export default class ComponentDemo {
   private logger: any;
   commands = {} as Record<string, any>;
   constructor({ logger }) {
     this.logger = logger || console;
     this.commands = {
-      // help: () => 'this is a help function for s -h or s website -h',
       deploy: {
         help: {
-          description: `
-          Deploy
-            Deploy local resources online 
-          Document
-            https://serverless.help/t/fc-deploy`,
+          description,
           summary: 'Deploy local resources online',
           option: [
             ['--type', 'Only deploy configuration or code, value: code/config'],
@@ -23,12 +26,8 @@ export default class ComponentDemo {
         subCommands: {
           service: {
             help: {
-              description: `
-              Deploy Service
-                Only deploy service resources 
-              Document
-                https://serverless.help/t/fc-deploy-service`,
-              sunmary: 'Only deploy service resources',
+              description,
+              summary: 'Only deploy service resources',
               option: [
                 ['-y, --assume-yes', 'Assume that the answer to any question which would be asked is yes'],
               ],
@@ -37,12 +36,8 @@ export default class ComponentDemo {
           },
           function: {
             help: {
-              description: `
-              Deploy function
-                Only deploy function resources 
-              Document
-                https://serverless.help/t/fc-deploy-function`,
-              sunmary: 'Only deploy function resources',
+              description,
+              summary: 'Only deploy function resources',
               option: [
                 ['-y, --assume-yes', 'Assume that the answer to any question which would be asked is yes'],
                 ['--skip-push', 'Skip automatically pushing docker container images'],
@@ -54,11 +49,7 @@ export default class ComponentDemo {
       },
       remove: {
         help: {
-          description: `
-        Remove
-        The ability to delete resources 
-        Document
-        https://serverless.help/t/remove`,
+          description,
           summary: 'The ability to delete resources ',
           option: [
             [' -y, --assume-yes', 'Assume that the answer to any question which would be asked is yes'],
@@ -67,12 +58,8 @@ export default class ComponentDemo {
         subCommands: {
           service: {
             help: {
-              description: `
-                Deploy Service
-                  Only deploy service resources 
-                Document
-                  https://serverless.help/t/fc-deploy-service`,
-              sunmary: 'Only deploy service resources',
+              description,
+              summary: 'Only deploy service resources',
               option: [
                 ['-y, --assume-yes', 'Assume that the answer to any question which would be asked is yes'],
               ],
@@ -81,12 +68,8 @@ export default class ComponentDemo {
           },
           function: {
             help: {
-              description: `
-                Deploy function
-                  Only deploy function resources 
-                Document
-                  https://serverless.help/t/fc-deploy-function`,
-              sunmary: 'Only deploy function resources',
+              description,
+              summary: 'Only deploy function resources',
               option: [
                 ['-y, --assume-yes', 'Assume that the answer to any question which would be asked is yes'],
                 ['--skip-push', 'Skip automatically pushing docker container images'],
