@@ -83,8 +83,13 @@ export default class ComponentDemo {
     }
   }
   public async deploy(inputs) {
-    this.logger.info(`v3test deploy`);
     this.logger.debug(`v3test deploy debug: ${JSON.stringify(inputs)}`);
+    this.logger.progress('checking')
+    await sleep(1000);
+    this.logger.progress('creating')
+    await sleep(1000);
+    this.logger.progress('finished')
+    await sleep(1000);
     return { hello: 'world' };
   }
   error() {
